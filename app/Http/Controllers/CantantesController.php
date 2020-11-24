@@ -8,7 +8,7 @@ class CantantesController extends Controller
 {
     public function index()
     {
-        $Cantantes= cantantes::join('socios', 'cantantes.id','=','socios.id')
+        $Cantantes= cantantes::join('socios', 'cantantes.id_cantante','=','socios.id_socio')
         ->select('Nombres', 'Apellidos', 'Telefono','socios.Nombres','socios.Apellidos','socios.telefono')
         ->get();
         return[
@@ -33,7 +33,7 @@ class CantantesController extends Controller
 
     public function update(Request $request)
     {
-        $Cantantes = cantantes::findOrFail($request->id);
+        $Cantantes = cantantes::findOrFail($request->id_cantante);
         $Cantantes->Nombres= $request->Nombres;
         $Cantantes->Apellidos= $request->Apellidos;
         $Cantantes->Telefono= $request->Telefono;
@@ -48,7 +48,7 @@ class CantantesController extends Controller
 
     public function destroy(Request $request)
     {
-        $Cantantes = cantantes::findOrFail($request->id);
+        $Cantantes = cantantes::findOrFail($request->id_cantante);
         
         $Cantantes->delete();
     }

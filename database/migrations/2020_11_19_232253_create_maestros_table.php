@@ -14,7 +14,7 @@ class CreateMaestrosTable extends Migration
     public function up()
     {
         Schema::create('maestros', function (Blueprint $table) {
-            $table->bigIncrements('id');
+            $table->bigIncrements('id_maestro');
             $table->string('Nombres',45);
             $table->string('Apellidos',45);
             $table->integer('Direccion');

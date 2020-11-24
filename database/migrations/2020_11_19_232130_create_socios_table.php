@@ -14,15 +14,15 @@ class CreateSociosTable extends Migration
     public function up()
     {
         Schema::create('socios', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->string('Nombres',45);
-            $table->string('Apellidos',45);
+            $table->bigIncrements('id_socio');
+            $table->string('nombres',45);
+            $table->string('apellidos',45);
             $table->string('telefono',20);
-            $table->string('Direccion',60);
-            $table->integer('Edad');
-            $table->string('Email',45)->unique();
-            $table->string('Sexo',9);
-            $table->integer('Contrato');
+            $table->string('direccion',60);
+            $table->integer('edad');
+            $table->string('email',45)->unique();
+            $table->string('sexo',9);
+            $table->integer('contrato');
             $table->timestamps();
         });
     }

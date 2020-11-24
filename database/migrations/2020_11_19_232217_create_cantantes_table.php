@@ -14,16 +14,16 @@ class CreateCantantesTable extends Migration
     public function up()
     {
         Schema::create('cantantes', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->string('Nombres',45);
-            $table->string('Apellidos',45);
-            $table->integer('Telefono');
-            $table->string('Nombre_artistico',15);
-            $table->string('Sexo',9);
-            $table->integer('Direccion');
-            $table->integer('Edad');
-            $table->unsignedBigInteger('cant_socio');
-            $table->foreign('cant_socio')->references('id')->on('socios');
+            $table->bigIncrements('id_cantante');
+            $table->string('nombres',45);
+            $table->string('apellidos',45);
+            $table->integer('telefono');
+            $table->string('nombre_artistico',15);
+            $table->string('sexo',9);
+            $table->integer('direccion');
+            $table->integer('edad');
+            $table->unsignedBigInteger('id_socio');
+            $table->foreign('id_socio')->references('id')->on('id_socio');
             $table->timestamps();
         });
     }

@@ -32,15 +32,15 @@ class MaestrosController extends Controller
     }
     public function update(Request $request)
     {
-        $Maestros = maestros::findOrFail($request->id);
-        $Maestros->Nombres= $request->Nombres;
-        $Maestros->Apellidos= $request->Apellidos;
-        $Maestros->Direccion= $request->Direccion;
-        $Maestros->Edad= $request->Edad;
-        $Maestros->Email= $request->Email;
-        $Maestros->Sexo= $request->Sexo;
-        $Maestros->Titulo= $request->Titulo;
-        $Maestros->Especializado= $request->Especializado;
+        $Maestros = maestros::findOrFail($request->id_maestro);
+        $Maestros->nombres= $request->nombres;
+        $Maestros->apellidos= $request->apellidos;
+        $Maestros->direccion= $request->direccion;
+        $Maestros->edad= $request->edad;
+        $Maestros->email= $request->email;
+        $Maestros->sexo= $request->sexo;
+        $Maestros->titulo= $request->titulo;
+        $Maestros->especializado= $request->especializado;
  
         $Maestros->save();
     }
@@ -48,7 +48,7 @@ class MaestrosController extends Controller
 
     public function destroy(Request $request)
     {
-        $Maestros = maestros::findOrFail($request->id);
+        $Maestros = maestros::findOrFail($request->id_maestro);
         
         $Maestros->delete();
     }
